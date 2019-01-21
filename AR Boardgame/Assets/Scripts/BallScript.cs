@@ -20,18 +20,19 @@ public class BallScript : MonoBehaviour
     private Rigidbody _thisRigidbody;
     private bool isTurnedOn = true;
     private Random _rnd = new Random();
+    private DefaultTrackableEventHandler _defaultTrackableEventHandler;
 
     void Start()
     {
         _thisRigidbody = this.GetComponent<Rigidbody>();
-        _gameManager.UI.SetActive(false);
+        _defaultTrackableEventHandler = GetComponentInParent<DefaultTrackableEventHandler>();
     }
 
     void FixedUpdate()
     {
         if (transform.position.y < _floor.transform.position.y - 10)
         {
-            if (!_gameManager._augmentedObjectTrackableEvent.ObjectLost)
+            if (!_defaultTrackableEventHandler.ObjectLost)
             {
                 _gameManager.AddPoints(1);
             }
@@ -41,12 +42,12 @@ public class BallScript : MonoBehaviour
             transform.position = _spawnPoints[spawnPoint].transform.position;
         }
 
-        if (isTurnedOn && _gameManager._augmentedObjectTrackableEvent.ObjectLost)
+        if (isTurnedOn && _defaultTrackableEventHandler.ObjectLost)
         {
             TurnOff();
         }
 
-        if (!isTurnedOn && !_gameManager._augmentedObjectTrackableEvent.ObjectLost)
+        if (!isTurnedOn && !_defaultTrackableEventHandler.ObjectLost)
         {
             TurnOn();
         }
