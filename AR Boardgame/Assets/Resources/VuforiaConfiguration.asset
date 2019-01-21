@@ -9,21 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -2067402452, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
+  m_Script: {fileID: -2067402452, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: VuforiaConfiguration
   m_EditorClassIdentifier: 
   vuforia:
     vuforiaLicenseKey: AfwXIc7/////AAABmU1U3CiyZEm1hCwCCZV7nKs1TPmieO4d6Ykb0NV0cGhifRiVwtxlDZlNyobj8y6remn9x3i6MUwSoK6DsYqL9zhpKLEOIUmY2WKvRhG7oRXHthSzcJFzCTOhZh4oH+yJydGsWrfoDhwJVgSubGVDjdlsC8J1oj7ca9LlTSvM2Tde0Hk13N6TkZW0pggC5Q3kVBxiinuHUrhUlAz6a6B1fcfAP94FFuuiiX4zKTDWH0pMVV7ZWLrrf55WLDO3V8Udyciixs9igy3RazsyMpIat5YHdo3h2oASvnj/GuP8b54z/KoMxkWnFCTUEJJbVBujojf00zd3EeBQULlmId9Fjiiva7iskXaYSJ3+JrK+n/Qa
-    ufoLicenseKey: QVlmU0dQYi8vLy8vQUFBQUtOSm84bU9Sa0VvNnVsV2tJYlpGeEdSenVCcWJVdFVuTzVDRFlFMkoyS2ZxVWh3VlNjUVJHMXZWYTlMZHdCeU9IMjN2b1Z0ZHhQRW5mODBHNXZydGx2MU5wRmJ3aWxXam1yaFNWLzV3VjNra01mMnMzY3RyNjh5MjVkRzM0VW1BTEx6ajhEaFduZUdUSmptNkNLTnNKcktsK3JHZHdHNmozTnBIeWorODRHMWxMelVyY2ZkK2poczUxdkl1NFpYZ2JZWmk3NzFTbkRZVXM4N3c0K0hSMndEaWY2MS9vNkVocTlETllLVDhpNk00aVlPT1J0R0RuQk1QOHRUV0xLOHRGKzE2UWVmdUk3MnRZeWRqY0psNlk1QWIvSkFRLzJGVFZYdVhuN3hSdXdySldCRVZBcTBwb0lKa2Z1bm1IQ3pjWEtqTUVsbFhTOWY4cjVsTmZMT0NvcytwSWV0RW4vQjlLMG82S2hmYlVvUFg=
+    ufoLicenseKey: QWRvN0R6WC8vLy8vQUFBQUtFN1VZOWEvRkVyRmgwQUJpbkdwWHU0OHZROWgvK0l5Y3l2UkxucDRJWjU0V29rYlJEaXhrUnM0Uy9idkd1bDk2SDNyVmpENWpEMW5tU2JIR3A1VGRuTXNIK3cxUHpPRk0xbnVxU0JHOUYrbTJTa2JPd2VlbHVrUVQ2T1dNWWNRQmNtWUZ5emxGRFpOV0drcnRXYm91T1BtYzJsanZkZk4rR1RqcDBPSWhoWm5qM05iN3BJcTJZeVNISkkvSW9FQTlqUGZlRzZuZHNqUngwWkYxYzcweWlIM0phWTZMeWt5bkdtTHhnbkZjWlNRY29hb0JtN0VmVlBIbE41aGxveGw5MXo5d0xHV3Uwd2hYRHNaWldvRlJ0N2o2eWxEdk5jNXd0MUNsR05rcW82TFAxUlg2QmpZQTF6aU5STUc0RENOdnB6UlhYZW5hOXZST21RSURPMzJmSUQrNEkwVmVSeXVZTmRmS3VNVDJQRzI=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
-    maxSimultaneousImageTargets: 1
+    maxSimultaneousImageTargets: 4
     maxSimultaneousObjectTargets: 1
     useDelayedLoadingObjectTargets: 0
     cameraDirection: 0
     mirrorVideoBackground: 0
     version: 8.0.10
-    eulaAcceptedVersions: '{"Values":["7.5","8.0"]}'
+    eulaAcceptedVersions: '{"Values":["7.5","8.0","7.1","7.2","7.7","8.1","0.0"]}'
   digitalEyewear:
     cameraOffset: 0.06
     distortionRenderingLayer: 31
@@ -50,12 +50,12 @@ MonoBehaviour:
     numDivisions: 2
     videoBackgroundShader: {fileID: 4800000, guid: f40623b353e2f1943b1b3ba42975db7a,
       type: 3}
-    matteShader: {fileID: 4800000, guid: 66d0d78a3000021448b598bb54a3bfdf, type: 3}
+    matteShader: {fileID: 15310, guid: 0000000000000000f000000000000000, type: 0}
     videoBackgroundEnabled: 1
   deviceTracker:
     autoInitTracker: 0
     autoStartTracker: 0
-    trackingMode: 1
+    trackingMode: 0
     posePrediction: 0
     modelCorrectionMode: 0
     modelTransformEnabled: 0
