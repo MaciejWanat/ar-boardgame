@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class BallScript : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class BallScript : MonoBehaviour
     private GameObject _floor;
 
     [SerializeField]
-    private GameObject _spawnPoint;
+    private GameObject[] _spawnPoints;
 
     [SerializeField]
     private GameObject _ceiling;
@@ -18,6 +19,7 @@ public class BallScript : MonoBehaviour
 
     private Rigidbody _thisRigidbody;
     private bool isTurnedOn = true;
+    private Random _rnd = new Random();
 
     void Start()
     {
@@ -33,7 +35,9 @@ public class BallScript : MonoBehaviour
                 _gameManager.AddPoints(1);
             }
 
-            transform.position = _spawnPoint.transform.position;
+            var spawnPoint = _rnd.Next(0, _spawnPoints.Length);
+
+            transform.position = _spawnPoints[spawnPoint].transform.position;
         }
 
         if (isTurnedOn && _gameManager._augmentedObjectTrackableEvent.ObjectLost)
