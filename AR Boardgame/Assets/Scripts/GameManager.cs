@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject _augmentedObject;
 
+    public GameObject UI;
+
     public DefaultTrackableEventHandler _augmentedObjectTrackableEvent;
     private int _points = 0;
 

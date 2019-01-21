@@ -24,6 +24,7 @@ public class BallScript : MonoBehaviour
     void Start()
     {
         _thisRigidbody = this.GetComponent<Rigidbody>();
+        _gameManager.UI.SetActive(false);
     }
 
     void FixedUpdate()
