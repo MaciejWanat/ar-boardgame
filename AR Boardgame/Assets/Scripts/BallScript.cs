@@ -30,7 +30,7 @@ public class BallScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (transform.position.y < _floor.transform.position.y - 10)
+        if (transform.position.y < _floor.transform.position.y - 7)
         {
             if (!_defaultTrackableEventHandler.ObjectLost)
             {
