@@ -179,14 +179,10 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
         // Deactivates the dataset first
         m_ObjectTracker.DeactivateDataSet(m_UDT_DataSet);
 
-        IEnumerable<Trackable> trackables = m_UDT_DataSet.GetTrackables();
-        foreach (Trackable trackable in trackables)
-        {
-            m_TargetCounter--;
+        m_TargetCounter = 0;
 
-            Debug.Log("Destroying trackable in UDT dataset: " + trackable.Name);
-            m_UDT_DataSet.Destroy(trackable, true);
-        }
+        Debug.Log("Destroying trackables in UDT dataset");
+        m_UDT_DataSet.DestroyAllTrackables(true);
 
         // Activate the dataset again
         m_ObjectTracker.ActivateDataSet(m_UDT_DataSet);

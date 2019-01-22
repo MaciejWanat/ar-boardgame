@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         _pointsText.text = "Points: " + _points.ToString();
     }
 
-    public void TurnUIOff()
+    public void TurnUserTargetUIOff()
     {
         UI.SetActive(false);
         _pointsText.text = "Points: " + _points.ToString();
