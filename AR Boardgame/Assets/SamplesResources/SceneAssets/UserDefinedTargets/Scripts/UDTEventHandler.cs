@@ -174,6 +174,23 @@ public class UDTEventHandler : MonoBehaviour, IUserDefinedTargetEventHandler
         }
     }
 
+    public void RemoveAllTargets()
+    {
+        // Deactivates the dataset first
+        m_ObjectTracker.DeactivateDataSet(m_UDT_DataSet);
+
+        m_TargetCounter = 0;
+
+        Debug.Log("Destroying trackables in UDT dataset");
+        m_UDT_DataSet.DestroyAllTrackables(true);
+
+        // Activate the dataset again
+        m_ObjectTracker.ActivateDataSet(m_UDT_DataSet);
+
+        // Make sure TargetBuildingBehaviour keeps scanning...
+        m_TargetBuildingBehaviour.StartScanning();
+    }
+
     #endregion //PUBLIC_METHODS
 
 

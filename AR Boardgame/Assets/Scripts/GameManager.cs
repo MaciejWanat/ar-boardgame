@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Text _pointsText;
 
+    [SerializeField]
+    private GameObject _resetButton;
+
     public GameObject UI;
 
     private int _points = 0;
@@ -23,9 +26,18 @@ public class GameManager : MonoBehaviour
         _pointsText.text = "Points: " + _points.ToString();
     }
 
-    public void TurnUIOff()
+    public void TurnUserTargetUIOff()
     {
         UI.SetActive(false);
         _pointsText.text = "Points: " + _points.ToString();
+        _resetButton.SetActive(true);
+    }
+
+    public void ResetGame()
+    {
+        UI.SetActive(true);
+        _points = 0;
+        _pointsText.text = "";
+        _resetButton.SetActive(false);
     }
 }
