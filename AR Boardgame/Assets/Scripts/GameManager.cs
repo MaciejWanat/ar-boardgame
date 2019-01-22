@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     {
         UI.SetActive(false);
         _pointsText.text = "Points: " + _points.ToString();
+        _resetButton.SetActive(true);
     }
 
     public void ResetGame()
