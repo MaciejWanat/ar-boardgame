@@ -26,6 +26,8 @@ public class BallScript : MonoBehaviour
     {
         _thisRigidbody = this.GetComponent<Rigidbody>();
         _defaultTrackableEventHandler = GetComponentInParent<DefaultTrackableEventHandler>();
+
+        Respawn();
     }
 
     void FixedUpdate()
@@ -37,9 +39,7 @@ public class BallScript : MonoBehaviour
                 _gameManager.AddPoints(1);
             }
 
-            var spawnPoint = _rnd.Next(0, _spawnPoints.Length);
-
-            transform.position = _spawnPoints[spawnPoint].transform.position;
+            Respawn();
         }
 
         if (isTurnedOn && _defaultTrackableEventHandler.ObjectLost)
@@ -65,5 +65,12 @@ public class BallScript : MonoBehaviour
         _thisRigidbody.detectCollisions = false;
         _thisRigidbody.useGravity = false;
         isTurnedOn = false;
+    }
+
+    private void Respawn()
+    {
+        var spawnPoint = _rnd.Next(0, _spawnPoints.Length);
+
+        transform.position = _spawnPoints[spawnPoint].transform.position;
     }
 }

@@ -50,13 +50,14 @@ public class GameManager : MonoBehaviour
         _points += points;
         _pointsText.text = "Points: " + _points.ToString();
 
-        var time = Int32.Parse(_timeText.text.Replace(":", "").Replace(",", ""));
+        var time = Int32.Parse(_timeText.text.Replace(":", "").Replace(",", "").Substring(5));
         if (time < _bestTime.Item2)
         {
-            _bestTime = new Tuple<string, int>(_timeText.text, time);
+            _bestTime = new Tuple<string, int>(_timeText.text.Substring(5), time);
         }
 
         _bestTimeText.text = "Best: " + _bestTime.Item1;
+        _startTime = Time.time;
     }
 
     public void TurnUserTargetUIOff()
